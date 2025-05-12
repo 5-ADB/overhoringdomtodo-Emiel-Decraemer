@@ -5,12 +5,16 @@ const input = document.getElementById("todo-input");
 const list = document.getElementById("todo-list");
 
 form.addEventListener("submit", function (e) {
+  lijstTodos.push({wat:input.value,gedaan:"nee"})
+  console.log(lijstTodos);
   e.preventDefault();
   const text = input.value.trim();
   if (text !== "") {
     const li = document.createElement("li");
-    //eigen aanpassing
-    li.textContent = `${text}(${winkelsSelect.value})`;
+    //eigen aanpassing deel 3
+    if (winkelsSelect.value == "geen winkel") {
+      li.textContent = text
+    } else{li.textContent = `${text} (${winkelsSelect.value})`}
     //terug ai code
     li.addEventListener("click", function () {
       li.classList.toggle("completed");
@@ -21,7 +25,7 @@ form.addEventListener("submit", function (e) {
 });
 
 // eigen code
-// deel 1
+// deel 1 / deel 5
 const lijstTodos = [
   { wat:"vloer kuisen",
     gedaan:"ja"
@@ -49,7 +53,7 @@ lijstTodos.forEach(todo => {
 // deel 2
 const winkelsSelect = document.querySelector("#winkels")
 
-const WinkelsLijst = ["aldi", "colruyt", "bonAp", "delhaize"]
+const WinkelsLijst = ["geen winkel", "aldi", "colruyt", "bonAp", "delhaize"]
 
 WinkelsLijst.forEach(winkel => {
   const winkelOption = document.createElement("option")
@@ -58,4 +62,7 @@ WinkelsLijst.forEach(winkel => {
 });
 
 // deel 3
+// zie ai code
+
+// deel 4
 // zie ai code
