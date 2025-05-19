@@ -41,6 +41,7 @@ const lijstTodos = [
 lijstTodos.forEach(todo => {
   const optie = document.createElement("li")
   optie.innerHTML = todo.wat
+  // maak gebruik van een boolean ipv JA
   if (todo.gedaan == "ja") {
     optie.classList.toggle("completed")
   }
@@ -53,6 +54,7 @@ lijstTodos.forEach(todo => {
 // deel 2
 const winkelsSelect = document.querySelector("#winkels")
 
+// zorg dat je toekomstgericht werkt, maak een lijst van objecten van winkels
 const WinkelsLijst = ["geen winkel", "aldi", "colruyt", "bonAp", "delhaize"]
 
 WinkelsLijst.forEach(winkel => {
@@ -66,3 +68,6 @@ WinkelsLijst.forEach(winkel => {
 
 // deel 4
 // zie ai code
+
+// ik mis vooral functies, 
+// oefen meer op het aanmaken en gebruiken van functies
